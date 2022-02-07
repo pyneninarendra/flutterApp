@@ -12,34 +12,39 @@ class HomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Awesome App"),
-      ),
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          child: const Text(
-            "Hi Text",
-            textAlign: TextAlign.start,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.teal,
-            boxShadow: const [
-              BoxShadow(
-                  color: Colors.grey, blurRadius: 5, offset: Offset(2.0, 5.0))
-            ],
-            gradient: const LinearGradient(colors: [Colors.red, Colors.yellow]),
-          ),
+        appBar: AppBar(
+          title: const Text("Awesome App"),
         ),
-      ),
-    );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              color: Colors.black,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.green,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.red,
+                  )
+                ],
+              )),
+        ));
   }
 }
